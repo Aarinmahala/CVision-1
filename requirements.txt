@@ -1,0 +1,10 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+langchain==0.0.350
+ollama==0.1.6
+pydantic==1.10.13
+PyPDF2==3.0.1
+docx2txt==0.8
+python-dotenv==1.0.0
+python-multipart==0.0.6
+email-validator==2.1.0.post1 

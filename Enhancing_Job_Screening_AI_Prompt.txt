@@ -1,0 +1,102 @@
+
+📁 Project Prompt: Enhancing Job Screening with AI and Data Intelligence
+Hack the Future: A Gen AI Sprint - Powered by Data
+
+🧠 Problem Statement:
+Recruitment today is manual, slow, and often biased. HR teams spend hours going through Job Descriptions (JDs) and resumes (CVs) to find suitable candidates. This leads to:
+- Time delays in hiring
+- Missed talent due to human oversight
+- Inconsistent shortlisting criteria
+
+Goal:
+Design an AI-powered multi-agent system that can:
+- Understand job descriptions
+- Parse resumes
+- Match candidates intelligently
+- Shortlist them based on a configurable threshold
+- Automatically schedule interviews
+
+🚀 Prompt:
+You are building a smart recruitment assistant composed of multiple AI agents. Each agent plays a specific role in the job screening pipeline. Design and implement these agents to work together, share data, and automate hiring.
+
+Your tasks:
+1. JD Summarizer Agent
+   - Input: Raw job description
+   - Output: Structured info including:
+     - Required skills
+     - Experience level
+     - Qualifications
+     - Role description
+   - Techniques: NLP extraction, keyword filtering
+
+2. Resume Parser Agent
+   - Input: Raw resume files (PDFs, DOCX, or text)
+   - Output: Extracted fields such as:
+     - Education
+     - Certifications
+     - Skills
+     - Experience history
+   - Techniques: Named entity recognition, classification
+
+3. Matcher Agent
+   - Input: Output from JD Summarizer and Resume Parser
+   - Output: Match score between JD and each CV (e.g., 87%)
+   - Techniques: Similarity scoring, keyword weighting, rule-based or ML matching
+
+4. Shortlisting Agent
+   - Input: Match score from Matcher
+   - Logic: If score ≥ threshold (e.g., 80%), add to shortlist
+   - Output: List of shortlisted candidates
+
+5. Interview Scheduler Agent
+   - Input: Shortlisted candidates
+   - Action: Send interview invites with:
+     - Preferred time slots
+     - Meeting format (virtual/in-person)
+   - Technologies: Email automation, calendar integration
+
+🛠️ Technologies and Tools
+- Language: Python
+- Database: SQLite (central memory for agent communication)
+- Libraries:
+  - spaCy, NLTK, or transformers for NLP
+  - Flask or FastAPI for REST interfaces (optional)
+  - smtplib or SendGrid for email handling
+
+Project Structure:
+job-screening-ai/
+├── agents/
+│   ├── jd_summarizer.py
+│   ├── resume_parser.py
+│   ├── matcher.py
+│   ├── shortlister.py
+│   └── interview_scheduler.py
+├── data/
+│   ├── job_descriptions/
+│   └── resumes/
+├── db/
+│   └── memory.sqlite
+├── utils/
+│   └── nlp_utils.py
+├── main.py
+└── README.md
+
+🔄 Workflow Diagram:
+[JD Summarizer Agent]     --->  
+                          [Matcher Agent] ---> [Shortlisting Agent] ---> [Interview Scheduler Agent]
+[CV Parser Agent]         ---^
+
+- All agents communicate via shared database (SQLite).
+- Modular and scalable design.
+
+✅ Success Criteria
+- Time efficiency (automated pipeline)
+- Accuracy in candidate-job matching
+- Ability to scale for multiple roles and resumes
+- Integration of real-time communication (email/calendar)
+- Ethical hiring: bias reduction through structured evaluation
+
+🎯 Impact
+- For Companies: Faster, more reliable hiring
+- For Candidates: Fairer evaluation based on skills
+- For HR Teams: More time for strategic talent tasks
